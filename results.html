@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clef Moderation Results - clef-flash</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 22px;
+        }
+        .sub {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .stats {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .stat-pill {
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .pill-acceptable { background: #dcfce7; color: #166534; }
+        .pill-toxic { background: #fee2e2; color: #991b1b; }
+        .pill-spam { background: #fef3c7; color: #92400e; }
+        .pill-total { background: #e2e8f0; color: #334155; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #f1f5f9;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #475569;
+        }
+        td {
+            padding: 14px 16px;
+            border-top: 1px solid #f1f5f9;
+            vertical-align: top;
+            font-size: 14px;
+        }
+        .id-col { width: 40px; font-weight: bold; color: #64748b; text-align: center; }
+        .meta-col { width: 170px; }
+        .author { font-weight: 600; color: #1e293b; }
+        .thread { font-size: 12px; color: #64748b; }
+        .time { font-size: 11px; color: #94a3b8; }
+        .comment-col { line-height: 1.5; }
+        .label-col { width: 180px; }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+        .badge-acceptable { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+        .badge-toxic { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+        .badge-spam { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+        .conf {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #64748b;
+            font-family: monospace;
+        }
+        .probs {
+            font-size: 11px;
+            color: #94a3b8;
+            font-family: monospace;
+            margin-top: 2px;
+        }
+        tr:hover td {
+            background: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CS307 Applied AI Lab (B.Tech CSE, 3rd year) - Forum Moderation</h1>
+            <div class="sub">Assignment 3: Build an AI artifact with Claude / Codex | Model: <strong>clef-flash</strong> | Total comments: 100</div>
+            <div class="stats">
+                <span class="stat-pill pill-total">Total: 100</span>
+                <span class="stat-pill pill-acceptable">Acceptable: 76</span>
+                <span class="stat-pill pill-toxic">Toxic: 10</span>
+                <span class="stat-pill pill-spam">Spam: 14</span>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Context</th>
+                    <th>Comment</th>
+                    <th>Classification</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="item-row acceptable">
+            <td class="id-col">1</td>
+            <td class="meta-col">
+                <div class="author">Aditya Kulkarni</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-12 09:14</div>
+            </td>
+            <td class="comment-col">Ma'am, is it okay if we use Claude for the frontend and Codex for the backend logic, or should the whole artifact be built with one tool?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">2</td>
+            <td class="meta-col">
+                <div class="author">Sneha Iyer</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-12 10:02</div>
+            </td>
+            <td class="comment-col">Submitted my artifact: a timetable clash checker for our dept. Claude made the UI in like 10 mins but I spent 2 hours fixing the CSV parsing. Link is in my submission.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.01 | spam: 0.03</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">3</td>
+            <td class="meta-col">
+                <div class="author">AssignmentGuru_99</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-12 10:40</div>
+            </td>
+            <td class="comment-col">🔥🔥 GET YOUR ASSIGNMENTS DONE BY EXPERTS 🔥🔥 Claude/Codex/ML projects, plagiarism free, 100% marks guaranteed. WhatsApp +91 90000 12345. Special discount for CS307 students!!</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.96</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.99</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">4</td>
+            <td class="meta-col">
+                <div class="author">Pooja Nair</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-12 11:25</div>
+            </td>
+            <td class="comment-col">Does the reflection doc need to include the prompts we used? Mine is around 40 prompts, that seems like too much to paste.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">5</td>
+            <td class="meta-col">
+                <div class="author">Harsh Agarwal</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-12 12:10</div>
+            </td>
+            <td class="comment-col">@Rohit your expense splitter is really clean. One suggestion: there's a rounding error when splitting ₹100 three ways, it shows 33.33 x 3 = 99.99.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">6</td>
+            <td class="meta-col">
+                <div class="author">Vikram Singh</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-12 12:31</div>
+            </td>
+            <td class="comment-col">Rohit's project is copy-paste from GitHub, everyone knows. Shameless guy, and sir still gives him marks. Pathetic.</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.96 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">7</td>
+            <td class="meta-col">
+                <div class="author">Mohd. Faizan</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-12 13:05</div>
+            </td>
+            <td class="comment-col">Bhai kisi ko Codex ka access mila? My college email isn't working for the student plan.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.80</div>
+                <div class="probs">acceptable: 0.93 | toxic: 0.03 | spam: 0.04</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">8</td>
+            <td class="meta-col">
+                <div class="author">Shreya Patil</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-12 14:47</div>
+            </td>
+            <td class="comment-col">Ma'am, is a deadline extension possible? Our hostel wifi was down from Thursday night till Saturday, the warden can confirm.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">9</td>
+            <td class="meta-col">
+                <div class="author">Vivek Menon</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-12 15:20</div>
+            </td>
+            <td class="comment-col">I found that Claude kept adding features I didn't ask for. Telling it "do only X, nothing else" at the start helped a lot.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.01 | spam: 0.00</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">10</td>
+            <td class="meta-col">
+                <div class="author">Free AI Deals</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-12 16:02</div>
+            </td>
+            <td class="comment-col">Join our Telegram group for FREE Claude Pro & ChatGPT Plus accounts 🤑 only ₹199 lifetime. t.me/aitoolsdeal_india (limited slots)</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.97</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">11</td>
+            <td class="meta-col">
+                <div class="author">Karthik Reddy</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-12 17:33</div>
+            </td>
+            <td class="comment-col">Can we deploy on Vercel or does it have to run locally? Mine needs an API key and I don't want to expose it publicly.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">12</td>
+            <td class="meta-col">
+                <div class="author">Ananya Joshi</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-12 18:15</div>
+            </td>
+            <td class="comment-col">Good point Sneha made in the lab: if the artifact stores data in localStorage, mention it in the reflection, since the data stays only in your browser.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">13</td>
+            <td class="meta-col">
+                <div class="author">Saurabh Yadav</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-12 19:02</div>
+            </td>
+            <td class="comment-col">Seriously who asks these dumb questions? Read the assignment PDF before posting, idiots. Wasting everyone's time.</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.97 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">14</td>
+            <td class="meta-col">
+                <div class="author">Nikhil Bansal</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-12 20:40</div>
+            </td>
+            <td class="comment-col">Honestly I think this assignment is too easy for 15 marks, the AI does 80% of the work. Grading should focus more on the reflection part.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">15</td>
+            <td class="meta-col">
+                <div class="author">Ankit Sharma</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-13 08:55</div>
+            </td>
+            <td class="comment-col">My quiz app for GATE prep is up. Feedback welcome, especially on the scoring logic — not sure the negative marking works right.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.00 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">16</td>
+            <td class="meta-col">
+                <div class="author">Meera Krishnan</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-13 09:30</div>
+            </td>
+            <td class="comment-col">Tried it Ankit, the negative marking subtracts 1/3 even for unattempted questions. Check the condition where you compute the score.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">17</td>
+            <td class="meta-col">
+                <div class="author">Ritu Verma</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-13 10:12</div>
+            </td>
+            <td class="comment-col">Earn ₹5000 daily from home using AI tools!! No investment. Students also eligible. DM me or visit earnwithai-india.in</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.98</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">18</td>
+            <td class="meta-col">
+                <div class="author">Tanvi Gupta</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-13 11:05</div>
+            </td>
+            <td class="comment-col">Sir, the rubric says "originality" — does a to-do app count as original if we add a feature like voice input?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">19</td>
+            <td class="meta-col">
+                <div class="author">Rahul Chauhan</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-13 11:48</div>
+            </td>
+            <td class="comment-col">Bro your app looks like it was made by a 5th class kid lol. Delete it and save us the embarrassment 🤡</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.82</div>
+                <div class="probs">acceptable: 0.04 | toxic: 0.94 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">20</td>
+            <td class="meta-col">
+                <div class="author">Ishita Banerjee</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-13 12:20</div>
+            </td>
+            <td class="comment-col">Thank you ma'am for the extra session on prompting yesterday. The bit about giving examples of the output format was super useful.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.98</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.00</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">21</td>
+            <td class="meta-col">
+                <div class="author">Siddharth Rao</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-13 13:44</div>
+            </td>
+            <td class="comment-col">Codex wrote my tests but half of them were testing the wrong thing. Lesson learned: read the generated tests, don't just see green ✅ and move on.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">22</td>
+            <td class="meta-col">
+                <div class="author">Aman Tiwari</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-13 15:10</div>
+            </td>
+            <td class="comment-col">Is anyone else getting "rate limit exceeded" on the free tier? It's been blocking me since afternoon.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.84</div>
+                <div class="probs">acceptable: 0.94 | toxic: 0.02 | spam: 0.04</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">23</td>
+            <td class="meta-col">
+                <div class="author">Pooja Nair</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-13 15:26</div>
+            </td>
+            <td class="comment-col">Yes same, try after midnight, it reset for me around 12:30.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.01 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">24</td>
+            <td class="meta-col">
+                <div class="author">Raju Tech</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-13 16:03</div>
+            </td>
+            <td class="comment-col">Subscribe to my YouTube channel "TechWithRaju" for the full solution of CS307 assignment 3 step by step!! Link in bio. Like share subscribe 🙏🙏</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.01 | spam: 0.97</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">25</td>
+            <td class="meta-col">
+                <div class="author">Kavya Pillai</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-13 17:22</div>
+            </td>
+            <td class="comment-col">Our group made a canteen menu voting app. Problem: anyone can vote 100 times by refreshing. Any simple way to stop this without a login?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">26</td>
+            <td class="meta-col">
+                <div class="author">Harsh Agarwal</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-13 17:40</div>
+            </td>
+            <td class="comment-col">Use a localStorage flag for basic prevention, it's not secure but for a class demo it's fine. Or ask for roll number and check duplicates.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">27</td>
+            <td class="meta-col">
+                <div class="author">Deepak Mishra</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-13 19:05</div>
+            </td>
+            <td class="comment-col">Girls in this class only get good marks because sir is soft on them. Ishita's project is average at best.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.75</div>
+                <div class="probs">acceptable: 0.91 | toxic: 0.08 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">28</td>
+            <td class="meta-col">
+                <div class="author">Omkar Jadhav</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-13 20:30</div>
+            </td>
+            <td class="comment-col">Sharing a tip: ask Claude to explain the code it wrote line by line before you submit. Viva mein pakde jaoge otherwise 😅</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.87</div>
+                <div class="probs">acceptable: 0.95 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">29</td>
+            <td class="meta-col">
+                <div class="author">Prateek Saxena</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-14 09:02</div>
+            </td>
+            <td class="comment-col">Is the viva individual or group-wise? Some of us did most of the work and others just watched.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">30</td>
+            <td class="meta-col">
+                <div class="author">Ritika Sen</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-14 09:20</div>
+            </td>
+            <td class="comment-col">^ this. In my group one member didn't even open the repo. How do we report this without drama?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.01 | spam: 0.00</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">31</td>
+            <td class="meta-col">
+                <div class="author">Rahul Chauhan</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-14 09:41</div>
+            </td>
+            <td class="comment-col">@Karan we all know you're the one who didn't open the repo. Useless fellow, always free-riding. Get lost.</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.94</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.98 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">32</td>
+            <td class="meta-col">
+                <div class="author">Aditya Kulkarni</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-14 10:15</div>
+            </td>
+            <td class="comment-col">Can we use Gemini or other models, or strictly Claude/Codex? The assignment title says Claude/Codex but the PDF says "any AI coding assistant".</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.89</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">33</td>
+            <td class="meta-col">
+                <div class="author">exam_updates_2026</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-14 11:00</div>
+            </td>
+            <td class="comment-col">URGENT: CS307 end-sem question paper leaked!! Get it before it's removed. ₹499 only. Pay on UPI 9000012345@upi and send screenshot.</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.86</div>
+                <div class="probs">acceptable: 0.03 | toxic: 0.02 | spam: 0.95</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">34</td>
+            <td class="meta-col">
+                <div class="author">Shreya Patil</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-14 21:12</div>
+            </td>
+            <td class="comment-col">Sir, the submission link on Moodle is showing "closed" even though the deadline is tonight 11:59 PM.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.87</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">35</td>
+            <td class="meta-col">
+                <div class="author">Rakesh M (TA)</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-14 21:30</div>
+            </td>
+            <td class="comment-col">It's open now, please refresh. It was a timezone setting issue on the course page.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">36</td>
+            <td class="meta-col">
+                <div class="author">Divya Hegde</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-15 08:40</div>
+            </td>
+            <td class="comment-col">My artifact helps my mom track her tailoring orders. She actually uses it now! Never thought an assignment would be useful at home.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.94</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.00 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">37</td>
+            <td class="meta-col">
+                <div class="author">Ananya Joshi</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-15 09:05</div>
+            </td>
+            <td class="comment-col">That's amazing Divya 👏 Maybe add a WhatsApp reminder for due dates? Could be a nice extension.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">38</td>
+            <td class="meta-col">
+                <div class="author">Kunal Bhatia</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-15 10:18</div>
+            </td>
+            <td class="comment-col">Doubt: if Claude generates code that's similar to some open-source project, is that plagiarism? How do we cite it?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.86</div>
+                <div class="probs">acceptable: 0.95 | toxic: 0.03 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">39</td>
+            <td class="meta-col">
+                <div class="author">Dr. Lakshmi Narayanan</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-15 11:02</div>
+            </td>
+            <td class="comment-col">Good question. Mention the tool and your prompts in the reflection, and if you knowingly used a library or snippet, cite it like any other source.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.98</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.00</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">40</td>
+            <td class="meta-col">
+                <div class="author">Shree Computers</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-15 12:30</div>
+            </td>
+            <td class="comment-col">Cheap laptops for engineering students!! i5 12th gen just ₹18,999. Limited stock. Call Shree Computers, Shivaji Nagar 📞 90000 54321</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.89</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.02 | spam: 0.96</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">41</td>
+            <td class="meta-col">
+                <div class="author">Vikram Singh</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-15 13:15</div>
+            </td>
+            <td class="comment-col">This forum is full of sir's chamchas. Everybody praising every useless app. Fake people.</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.97 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">42</td>
+            <td class="meta-col">
+                <div class="author">Kunal Bhatia</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-15 14:00</div>
+            </td>
+            <td class="comment-col">I'm not sure using AI for assignments is actually teaching us anything. I learned more debugging the output than from the tool itself.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">43</td>
+            <td class="meta-col">
+                <div class="author">Siddharth Rao</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-15 14:22</div>
+            </td>
+            <td class="comment-col">Disagree a bit — knowing what to ask and how to check the output is itself a skill. Industry is going this way anyway.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">44</td>
+            <td class="meta-col">
+                <div class="author">Vivek Menon</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-15 16:35</div>
+            </td>
+            <td class="comment-col">My Codex output used a deprecated pandas function (append). Fixed it with concat. Posting in case anyone else hits the same error.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">45</td>
+            <td class="meta-col">
+                <div class="author">Tanvi Gupta</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-15 16:50</div>
+            </td>
+            <td class="comment-col">Thanks Vivek, was stuck on exactly this for an hour 🙏</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">46</td>
+            <td class="meta-col">
+                <div class="author">CryptoKing Official</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-15 18:00</div>
+            </td>
+            <td class="comment-col">💰 Crypto signals group 💰 90% accuracy, students making ₹50k/month. Join fast before closing: bit.ly/crypto-signal-vip</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.98</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">47</td>
+            <td class="meta-col">
+                <div class="author">Mohd. Faizan</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-16 09:10</div>
+            </td>
+            <td class="comment-col">Ma'am, will the marks be uploaded before the Diwali break?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.88</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">48</td>
+            <td class="meta-col">
+                <div class="author">Deepak Mishra</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-16 10:25</div>
+            </td>
+            <td class="comment-col">Whoever gave my project 2/10 in peer review, you're a jealous loser. I know who you are and I'll see you outside the lab.</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.98 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">49</td>
+            <td class="meta-col">
+                <div class="author">Kavya Pillai</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-16 11:00</div>
+            </td>
+            <td class="comment-col">Peer review feedback was helpful, thanks to whoever pointed out the mobile layout breaking. Fixed it.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.99</div>
+                <div class="probs">acceptable: 1.00 | toxic: 0.00 | spam: 0.00</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">50</td>
+            <td class="meta-col">
+                <div class="author">Riya Thomas</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-16 11:40</div>
+            </td>
+            <td class="comment-col">Can someone explain what "artifact" means here? Is it just the code or a deployed thing people can open?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.85</div>
+                <div class="probs">acceptable: 0.95 | toxic: 0.03 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">51</td>
+            <td class="meta-col">
+                <div class="author">Rakesh M (TA)</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-16 12:05</div>
+            </td>
+            <td class="comment-col">From the PDF: artifact = a working, shareable thing (web page, tool, small app) + a 1-page reflection. Code alone isn't enough.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.96</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">52</td>
+            <td class="meta-col">
+                <div class="author">Shruti Deshpande</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-16 14:15</div>
+            </td>
+            <td class="comment-col">Built a Marathi–English vocabulary flashcard app. Claude handled the Devanagari fonts without issues, which surprised me.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.00 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">53</td>
+            <td class="meta-col">
+                <div class="author">Karthik Reddy</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-16 14:40</div>
+            </td>
+            <td class="comment-col">Nice! Does it do audio pronunciation? The browser speech API supports mr-IN I think.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.96</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">54</td>
+            <td class="meta-col">
+                <div class="author">Assignment Help Zone</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-16 15:30</div>
+            </td>
+            <td class="comment-col">Need help with your assignment? Our PhD experts do Python, Java, ML, AI projects. Fast delivery in 24 hours. Visit www.assignmenthelpzone.co.in or mail help@assignmenthelpzone.co.in</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.96</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.99</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">55</td>
+            <td class="meta-col">
+                <div class="author">Saurabh Yadav</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-16 16:02</div>
+            </td>
+            <td class="comment-col">Ankit's GATE quiz app is trash just like his GATE score will be 😂😂</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.89</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.96 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">56</td>
+            <td class="meta-col">
+                <div class="author">Prateek Saxena</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-16 18:20</div>
+            </td>
+            <td class="comment-col">Request: can the TA share a sample of a good reflection from last year? Not sure what level of detail is expected.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.89</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">57</td>
+            <td class="meta-col">
+                <div class="author">Aman Tiwari</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-16 22:45</div>
+            </td>
+            <td class="comment-col">Sir, I submitted the wrong link by mistake (my old repo). Can you allow a resubmission?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">58</td>
+            <td class="meta-col">
+                <div class="author">Riya Thomas</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-17 09:00</div>
+            </td>
+            <td class="comment-col">Is it fine if our artifact uses a free public API (like weather)? Or should everything be self-contained?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">59</td>
+            <td class="meta-col">
+                <div class="author">Meera Krishnan</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-17 10:30</div>
+            </td>
+            <td class="comment-col">My experience: Claude is better at explaining, Codex felt faster for refactoring. Both hallucinated a library function once.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">60</td>
+            <td class="meta-col">
+                <div class="author">Nikhil Bansal</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-17 10:52</div>
+            </td>
+            <td class="comment-col">Agree. Codex invented a "pd.read_html_table" function for me 😂 Always run the code.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">61</td>
+            <td class="meta-col">
+                <div class="author">Rahul Chauhan</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-17 11:10</div>
+            </td>
+            <td class="comment-col">Shut up Meera, nobody cares about your "experience". Topper behaviour as usual 🙄</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.98 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">62</td>
+            <td class="meta-col">
+                <div class="author">Omkar Jadhav</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-17 12:40</div>
+            </td>
+            <td class="comment-col">Our hostel group made an attendance tracker for the mess. Uploaded screenshots to the drive folder as instructed.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">63</td>
+            <td class="meta-col">
+                <div class="author">Notes Wala Bhaiya</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-17 13:30</div>
+            </td>
+            <td class="comment-col">Hello dear friends, I am selling original notes of all subjects 3rd year CSE. PDF available at low price. Contact on Instagram @notes.wala.bhaiya</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.01 | spam: 0.97</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">64</td>
+            <td class="meta-col">
+                <div class="author">Arjun Das</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-17 15:05</div>
+            </td>
+            <td class="comment-col">Ma'am, our artifact is for visually impaired users (screen-reader friendly bus timings). Can we get extra time to test it with actual users from the NGO?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">65</td>
+            <td class="meta-col">
+                <div class="author">Neha Kapoor</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-17 15:30</div>
+            </td>
+            <td class="comment-col">That's a great project, Arjun. Happy to help test with NVDA if you need another tester.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.81</div>
+                <div class="probs">acceptable: 0.93 | toxic: 0.04 | spam: 0.03</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">66</td>
+            <td class="meta-col">
+                <div class="author">Sonu Kumar</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-17 17:10</div>
+            </td>
+            <td class="comment-col">Kya reflection Hindi mein likh sakte hain? My English writing is not that good but I can explain properly in Hindi.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.01 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">67</td>
+            <td class="meta-col">
+                <div class="author">Ishita Banerjee</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-18 09:25</div>
+            </td>
+            <td class="comment-col">The rubric weightage is unclear. 40% artifact, 40% reflection, 20% viva — is that correct? The slides said something different.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.86</div>
+                <div class="probs">acceptable: 0.95 | toxic: 0.03 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">68</td>
+            <td class="meta-col">
+                <div class="author">Ritika Sen</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-18 10:00</div>
+            </td>
+            <td class="comment-col">The grading for assignment 2 was unfair in my opinion, the same output got different marks in different batches. Please clarify the re-evaluation process.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">69</td>
+            <td class="meta-col">
+                <div class="author">Vikram Singh</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-18 10:22</div>
+            </td>
+            <td class="comment-col">TA doesn't know anything himself, how will he grade AI projects? Clueless fellow should go back to school.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.27</div>
+                <div class="probs">acceptable: 0.60 | toxic: 0.39 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">70</td>
+            <td class="meta-col">
+                <div class="author">Harsh Agarwal</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-18 12:15</div>
+            </td>
+            <td class="comment-col">Tip for anyone using Claude artifacts: ask it to add a "reset data" button. Saved me during the demo when the test data got messed up.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">71</td>
+            <td class="meta-col">
+                <div class="author">Giveaway India</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-18 13:00</div>
+            </td>
+            <td class="comment-col">FREE iPhone 17 giveaway for college students 🎉 Just fill the form with your name, college ID and Aadhaar number: forms-giveaway-india.com/iphone</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.02 | spam: 0.96</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">72</td>
+            <td class="meta-col">
+                <div class="author">Gaurav Pandey</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-18 15:45</div>
+            </td>
+            <td class="comment-col">Our team used Codex to convert old C++ lab programs into a small web visualizer for sorting algorithms. Feedback welcome!</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.87</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">73</td>
+            <td class="meta-col">
+                <div class="author">Shruti Deshpande</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-18 16:10</div>
+            </td>
+            <td class="comment-col">Very nice, but the bubble sort animation is too fast to follow. Maybe add a speed slider?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">74</td>
+            <td class="meta-col">
+                <div class="author">Tanvi Gupta</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-18 18:30</div>
+            </td>
+            <td class="comment-col">Is there a word limit for the reflection? I wrote 1100 words, feels too long.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.89</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">75</td>
+            <td class="meta-col">
+                <div class="author">Pooja Nair</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-18 18:45</div>
+            </td>
+            <td class="comment-col">Ma'am said max 1 page, so around 500 words.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">76</td>
+            <td class="meta-col">
+                <div class="author">Deepak Mishra</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-19 09:10</div>
+            </td>
+            <td class="comment-col">Everyone from that side of the hostel copies, it's in their blood. Don't trust their "original" projects.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.16</div>
+                <div class="probs">acceptable: 0.57 | toxic: 0.32 | spam: 0.11</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">77</td>
+            <td class="meta-col">
+                <div class="author">Gaurav Pandey</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-19 10:30</div>
+            </td>
+            <td class="comment-col">Sir, what happens if our deployed link stops working after submission (free hosting expires)? Will we lose marks?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.86</div>
+                <div class="probs">acceptable: 0.95 | toxic: 0.03 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">78</td>
+            <td class="meta-col">
+                <div class="author">Kavya Pillai</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-19 10:50</div>
+            </td>
+            <td class="comment-col">I shared a short screen recording as a backup in case the link fails. Maybe others should do the same.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.96</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">79</td>
+            <td class="meta-col">
+                <div class="author">InstaGrowth Services</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-19 12:00</div>
+            </td>
+            <td class="comment-col">👉 Get 10,000 Instagram followers in 1 day 👈 Real & active. Best for students starting tech pages. WhatsApp 90000 67890</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.98</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">80</td>
+            <td class="meta-col">
+                <div class="author">Kunal Bhatia</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-19 21:40</div>
+            </td>
+            <td class="comment-col">I'm struggling honestly. Everyone is posting cool apps and mine barely works. Is it okay to submit something simple if the reflection is honest?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">81</td>
+            <td class="meta-col">
+                <div class="author">Neha Kapoor</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-19 22:05</div>
+            </td>
+            <td class="comment-col">Absolutely okay. Sir said in class that the reflection about what failed counts a lot. Don't stress, simple + honest > fancy + copied.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.89</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">82</td>
+            <td class="meta-col">
+                <div class="author">Kunal Bhatia</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-19 22:20</div>
+            </td>
+            <td class="comment-col">Thank you Neha, that really helps 🙂</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">83</td>
+            <td class="meta-col">
+                <div class="author">Saurabh Yadav</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-19 22:48</div>
+            </td>
+            <td class="comment-col">lol Kunal still crying about his project. Maybe engineering isn't for you bro, try BA.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.50</div>
+                <div class="probs">acceptable: 0.79 | toxic: 0.20 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">84</td>
+            <td class="meta-col">
+                <div class="author">Sonu Kumar</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-20 09:30</div>
+            </td>
+            <td class="comment-col">Doubt: Claude gave different code for the same prompt twice. Which one should we submit, and should we mention it?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.85</div>
+                <div class="probs">acceptable: 0.95 | toxic: 0.03 | spam: 0.03</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">85</td>
+            <td class="meta-col">
+                <div class="author">Meera Krishnan</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-20 09:55</div>
+            </td>
+            <td class="comment-col">Submit the one you tested and understand. Mentioning the variation in your reflection is actually a good insight.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.91</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">86</td>
+            <td class="meta-col">
+                <div class="author">Work From Home Jobs</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-20 11:00</div>
+            </td>
+            <td class="comment-col">Part time job for students: typing work, ₹800/day, no target. Registration fee only ₹299. Reply "INTERESTED" with your number.</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.02 | toxic: 0.01 | spam: 0.97</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">87</td>
+            <td class="meta-col">
+                <div class="author">Aditya Kulkarni</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-20 12:20</div>
+            </td>
+            <td class="comment-col">Can we work on an existing personal project and extend it with AI, or must it be new?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">88</td>
+            <td class="meta-col">
+                <div class="author">Saurabh Yadav</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-20 13:10</div>
+            </td>
+            <td class="comment-col">Ankit, sorry for that comment about your app and your GATE score, it was uncalled for. The app is actually good, just that one bug.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">89</td>
+            <td class="meta-col">
+                <div class="author">Ishita Banerjee</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-20 16:00</div>
+            </td>
+            <td class="comment-col">Our college fest registration form artifact is live, please test and break it before Friday 🙏</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.82</div>
+                <div class="probs">acceptable: 0.94 | toxic: 0.01 | spam: 0.06</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">90</td>
+            <td class="meta-col">
+                <div class="author">Riya Thomas</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-20 16:35</div>
+            </td>
+            <td class="comment-col">Found a bug: entering an emoji in the name field crashes the confirmation page. 😅</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.94</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">91</td>
+            <td class="meta-col">
+                <div class="author">Vikram Singh</div>
+                <div class="thread">Share your artifacts</div>
+                <div class="time">2026-10-20 17:02</div>
+            </td>
+            <td class="comment-col">Who made this garbage form? Typical mechanical branch people trying to code. Stick to your lathe machines 😂</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.83</div>
+                <div class="probs">acceptable: 0.04 | toxic: 0.94 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">92</td>
+            <td class="meta-col">
+                <div class="author">Shruti Deshpande</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-21 10:10</div>
+            </td>
+            <td class="comment-col">Does using AI-generated images in the artifact need attribution too?</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">93</td>
+            <td class="meta-col">
+                <div class="author">Siddharth Rao</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-21 11:30</div>
+            </td>
+            <td class="comment-col">Will there be a session on how to evaluate AI-generated code for security issues? Seems important for the next assignment.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.88</div>
+                <div class="probs">acceptable: 0.96 | toxic: 0.02 | spam: 0.02</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">94</td>
+            <td class="meta-col">
+                <div class="author">cs307_solutions</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-21 12:00</div>
+            </td>
+            <td class="comment-col">CS307 complete solved assignments + viva answers available!! 100% working code. DM on telegram @cs307_solutions_hub. Pay after delivery.</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.98</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">95</td>
+            <td class="meta-col">
+                <div class="author">Ritika Sen</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-21 14:15</div>
+            </td>
+            <td class="comment-col">Sir, please consider allowing pair submissions next time, 4-member groups are hard to coordinate.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.90</div>
+                <div class="probs">acceptable: 0.97 | toxic: 0.02 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">96</td>
+            <td class="meta-col">
+                <div class="author">Omkar Jadhav</div>
+                <div class="thread">Submission & grading</div>
+                <div class="time">2026-10-21 23:58</div>
+            </td>
+            <td class="comment-col">Finally submitted at 11:57 PM 😂 Never doing last-minute again (I say this every semester).</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.95</div>
+                <div class="probs">acceptable: 0.98 | toxic: 0.01 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row toxic">
+            <td class="id-col">97</td>
+            <td class="meta-col">
+                <div class="author">Rahul Chauhan</div>
+                <div class="thread">Doubts</div>
+                <div class="time">2026-10-22 10:05</div>
+            </td>
+            <td class="comment-col">If you can't even set up an API key you shouldn't be in CSE. Stop spamming the forum with your stupid doubts, dumbo.</td>
+            <td class="label-col">
+                <span class="badge badge-toxic">TOXIC</span>
+                <div class="conf">conf: 0.92</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.97 | spam: 0.01</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">98</td>
+            <td class="meta-col">
+                <div class="author">Divya Hegde</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-22 18:30</div>
+            </td>
+            <td class="comment-col">Thanks to everyone who answered doubts here, this thread was more useful than the lectures honestly 😄</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.97</div>
+                <div class="probs">acceptable: 0.99 | toxic: 0.00 | spam: 0.00</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row spam">
+            <td class="id-col">99</td>
+            <td class="meta-col">
+                <div class="author">Raju Startup</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-23 12:00</div>
+            </td>
+            <td class="comment-col">Hey guys check out my startup app, we are giving ₹100 Paytm cash for every signup using my referral code RAJU100 😊 Link: refer-n-earn.app/RAJU100</td>
+            <td class="label-col">
+                <span class="badge badge-spam">SPAM</span>
+                <div class="conf">conf: 0.93</div>
+                <div class="probs">acceptable: 0.01 | toxic: 0.01 | spam: 0.98</div>
+            </td>
+        </tr>
+        
+        <tr class="item-row acceptable">
+            <td class="id-col">100</td>
+            <td class="meta-col">
+                <div class="author">Shreya Patil</div>
+                <div class="thread">General</div>
+                <div class="time">2026-10-25 10:40</div>
+            </td>
+            <td class="comment-col">Ma'am, any update on when the next assignment will be released? Want to plan around mid-sems.</td>
+            <td class="label-col">
+                <span class="badge badge-acceptable">ACCEPTABLE</span>
+                <div class="conf">conf: 0.85</div>
+                <div class="probs">acceptable: 0.95 | toxic: 0.03 | spam: 0.03</div>
+            </td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
